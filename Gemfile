@@ -19,10 +19,13 @@ gem "puma"
 gem "rack-canonical-host"
 gem "rails", "~> 4.2.0"
 gem "recipient_interceptor"
+gem "resque"
+gem "resque-scheduler"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
+
 
 group :development do
   gem "quiet_assets"
