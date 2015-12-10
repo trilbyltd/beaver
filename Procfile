@@ -1,2 +1,2 @@
 web: bundle exec puma -p $PORT -C ./config/puma.rb
-worker: bundle exec rake jobs:work
+worker: TERM_CHILD=1 QUEUES=* bundle exec rake jobs:work

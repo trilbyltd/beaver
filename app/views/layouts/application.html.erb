@@ -14,8 +14,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
+<header class="">
+  <%= render 'layouts/navigation' %>
+</header>
+<div class="container-fluid">
   <%= render "flashes" -%>
-  <%= yield %>
+  <div class="col-md-12">
+    <%= yield %>
+  </div>
   <%= render "javascript" %>
+</div>
 </body>
 </html>

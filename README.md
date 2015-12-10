@@ -38,3 +38,18 @@ you can deploy to staging and production with:
 
     $ ./bin/deploy staging
     $ ./bin/deploy production
+
+## Heroku Config
+Add the required heroku addons
+```` heroku addons:create heroku-redis````
+
+Then set the required config variables
+````
+heroku config:add AIRBRAKE_API_KEY= \         
+APPLICATION_HOST= \
+EMAIL_RECIPIENTS= \
+SMTP_ADDRESS= \
+SMTP_DOMAIN= \
+SMTP_PASSWORD= \
+SMTP_USERNAME= \
+```` 

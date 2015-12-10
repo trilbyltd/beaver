@@ -11,5 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-wysihtml5
 //= require_tree .
