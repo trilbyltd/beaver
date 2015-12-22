@@ -6,7 +6,7 @@
             new_notification_path,
             :class => 'btn btn-primary' %>
 
-<h2>Updates for week ending <%= Time.now.end_of_week.strftime('%a %e %b %Y') %></h2>
+<h2>All Notifications</h2>
 <table class="table table-striped">
 <div class="row">
   <thead>
@@ -44,7 +44,8 @@
   </tbody>
 </table>
 
-<%= link_to t('.all', :default => t("helpers.links.all")),
-            notifications_all_path,
+
+<%= link_to t('.new', :default => t("helpers.links.back")),
+            notifications_path,
             :class => 'btn btn-primary' %>
 </div>

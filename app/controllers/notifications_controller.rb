@@ -3,6 +3,11 @@ class NotificationsController < ApplicationController
 
   # GET /notifications
   def index
+    @notifications = Notification.latest_week.all
+    respond_with @notifications
+  end
+
+  def all
     @notifications = Notification.all
   end
 
@@ -23,10 +28,14 @@ class NotificationsController < ApplicationController
   def create
     @notification = Notification.new(notification_params)
 
-    if @notification.save
-      redirect_to @notification, notice: 'Notification was successfully created.'
-    else
-      render :new
+    respond_to do |format|
+      if @notification.save
+        format.html { redirect_to notifications_path, notice: 'Notification was successfully created.' }
+        format.json { render :show, status: :created, location: @notification }
+      else
+        format.html { render :new }
+        format.json { render json: @notification.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -53,6 +62,6 @@ class NotificationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def notification_params
-      params.require(:notification).permit(:date_opened, :date_closed, :host, :service, :state, :tag, :notes)
+      params.require(:notification).permit(:date_opened, :date_closed, :host, :service, :state, :tag, :notes, :output)
     end
 end

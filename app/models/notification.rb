@@ -1,10 +1,22 @@
 class Notification < ActiveRecord::Base
 
-STATE = ['WARNING' => 'warning', 
-				 'CRITICAL' => 'danger',
-				 'DOWN' => 'danger', 
-				 'UNKNOWN' => 'info',
-				 'OK' => 'info']
+validates :date_opened, presence: true
+validates :host, presence: true
+validates :state, presence: true
+validates :service, presence: true
+validates :output, presence: true
+
+default_scope	{ order('date_opened DESC') }
+
+scope :latest_week, lambda { where("date_opened > ?", Time.now.beginning_of_week) }
+
+STATE = [ 
+					['WARNING', 'warning'], 
+				 	['CRITICAL', 'danger'],
+				 	['DOWN', 'danger'],
+				 	['UNKNOWN', 'info'],
+				 	['OK', 'info']
+				]
 
 TAG = [	"Untagged", 
 				"Action Taken: Service Issue (View clean)", 
@@ -17,7 +29,5 @@ TAG = [	"Untagged",
 				"No Action Taken: Check is faulty/requires modification",
 				"N/A"
 			]
-
-default_scope	{ order('date_opened DESC') }
 
 end

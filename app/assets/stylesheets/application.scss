@@ -1,6 +1,10 @@
+//= require_tree .
+
 @charset "utf-8";
 
 @import "normalize-rails";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
+
+.main {margin-top: 20px;}

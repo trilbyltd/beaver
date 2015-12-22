@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209161318) do
+ActiveRecord::Schema.define(version: 20151211163624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20151209161318) do
 
   create_table "notifications", force: :cascade do |t|
     t.datetime "date_opened", null: false
-    t.datetime "date_closed", null: false
+    t.datetime "date_closed"
     t.string   "host",        null: false
     t.string   "service",     null: false
     t.string   "state",       null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151209161318) do
     t.string   "notes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "output"
   end
 
 end

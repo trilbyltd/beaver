@@ -16,8 +16,14 @@ en:
       destroy: "Delete"
       new: "New"
       edit: "Edit"
+      all: "View All"
+    page_titles:
+      default: "Beaver - The place for logging"
     titles:
+      default: "Beaver - The place for logging"
+      short: "Beaver"
       edit: "Edit %{model}"
       save: "Save %{model}"
       new: "New %{model}"
       delete: "Delete %{model}"
+      all: "All %{model}"
