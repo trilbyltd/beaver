@@ -11,8 +11,10 @@ gem "delayed_job_active_record"
 gem "email_validator"
 gem "flutie"
 gem "high_voltage"
+gem 'honeybadger', '~> 2.0'
 gem "jquery-rails"
 gem "neat", "~> 1.7.0"
+gem "newrelic_rpm", ">= 3.9.8"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
 gem "puma"
@@ -61,9 +63,4 @@ end
 group :staging, :production do
   gem "rails_stdout_logging"
   gem "rack-timeout"
-end
-
-group :production do 
-  gem "airbrake"
-  gem "newrelic_rpm", ">= 3.9.8"
 end

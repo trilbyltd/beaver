@@ -44,9 +44,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    airbrake (5.0.5)
-      airbrake-ruby (~> 1.0)
-    airbrake-ruby (1.0.4)
     arel (6.0.3)
     ast (2.2.0)
     autoprefixer-rails (6.3.3)
@@ -121,6 +118,7 @@ GEM
     hashdiff (0.3.0)
     high_voltage (2.4.0)
     highline (1.7.8)
+    honeybadger (2.4.1)
     i18n (0.7.0)
     i18n-tasks (0.9.4)
       activesupport (>= 4.0.2)
@@ -307,7 +305,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airbrake
   autoprefixer-rails
   awesome_print
   bootstrap-sass
@@ -325,6 +322,7 @@ DEPENDENCIES
   flutie
   formulaic
   high_voltage
+  honeybadger (~> 2.0)
   i18n-tasks
   jquery-rails
   launchy
