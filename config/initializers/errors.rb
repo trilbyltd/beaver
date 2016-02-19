@@ -15,7 +15,7 @@ HTTP_ERRORS = [
   Net::HTTPBadResponse,
   Net::HTTPHeaderSyntaxError,
   Net::ProtocolError,
-  Timeout::Error
+  Timeout::Error,
 ]
 
 SMTP_SERVER_ERRORS = [
@@ -23,12 +23,19 @@ SMTP_SERVER_ERRORS = [
   Net::SMTPAuthenticationError,
   Net::SMTPServerBusy,
   Net::SMTPUnknownError,
-  TimeoutError
+  Timeout::Error,
 ]
 
 SMTP_CLIENT_ERRORS = [
   Net::SMTPFatalError,
-  Net::SMTPSyntaxError
+  Net::SMTPSyntaxError,
 ]
 
-SMTP_ERRORS = SMTP_SERVER_ERRORS + SMTP_CLIENT_ERRORS
+# SMTP_ERRORS = SMTP_SERVER_ERRORS + SMTP_CLIENT_ERRORS
+
+SMTP_ERRORS = SMTP_SERVER_ERRORS.concat(SMTP_CLIENT_ERRORS)
+
+SMTP_CLIENT_ERROR_FLASH = 'The email address supplied is invalid. Please
+  check for spelling mistakes.'
+SMTP_SERVER_ERROR_FLASH = 'We encountered an internal issue while attempting
+  to deliver this email. Please try again in a few minutes.'

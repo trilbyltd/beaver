@@ -1,8 +1,7 @@
 source "https://rubygems.org"
 
-ruby "2.2.3"
+ruby "2.3.0"
 
-gem "airbrake"
 gem "autoprefixer-rails"
 gem "bootstrap-sass"
 gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
@@ -59,8 +58,16 @@ group :test do
   gem "timecop"
   gem "webmock"
 end
+group :staging do
+  # TODO Remove before deploy
+  gem "dotenv-rails"
+end
 
 group :staging, :production do
   gem "rails_stdout_logging"
   gem "rack-timeout"
+end
+
+group :production do 
+  gem "airbrake"
 end
